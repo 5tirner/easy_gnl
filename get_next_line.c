@@ -1,3 +1,4 @@
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -34,6 +35,8 @@ char    *add_char(char *str, char c)
                 new[i] = c;
                 new[i + 1] = '\0';
         }
+	if (str)
+		free(str);
         return (new);
 }
 
@@ -60,7 +63,7 @@ char    *gl(int fd)
 }
 int main()
 {
-        int fd = open("main.c", O_RDONLY, 0777);
+        int fd = open("get_next_line.c", O_RDONLY, 0777);
         char *str;
         int i = 1;
         while (i)
@@ -69,6 +72,7 @@ int main()
                 printf("%s", str);
                 if (!str)
                         break;
+		free(str);
         }
         close(fd);
 }
