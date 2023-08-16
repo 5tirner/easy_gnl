@@ -10,10 +10,14 @@
  * Ellegale Get_Next_line
  */
 
+
+
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #if BUFFER_SIZE > 1
 #undef BUFFER_SIZE
 #define BUFFER_SIZE 1
@@ -21,6 +25,7 @@
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 1
 #endif
+
 char    *add_char(char *str, char c)
 {
         char *new;
